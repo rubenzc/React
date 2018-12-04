@@ -2,21 +2,51 @@ import React from 'react';
 
 class Form extends React.Component{
 
+    //refs are used to read value from field
+    brandRef = React.createRef();
+    yearRef = React.createRef();
+    basicPlanRef = React.createRef();
+    fullPlanRef = React.createRef();
+
+    //Read data from form fields
+    quoteInsurance = (e) => {
+        //Avoid insert parameters in url when submit
+        e.preventDefault();
+        //GET DATA
+
+        //Read the plan
+        const plan = this.basicPlanRef.current.checked ? 'basic' : 'full';
+
+        //Create object
+        const infoCar = {
+            brand: this.brandRef.current.value,
+            year: this.yearRef.current.value,
+            plan: plan
+        }
+        
+        //Send data to father component
+        this.props.quoteInsurance(infoCar);
+
+        //Reset the form
+        e.currentTarget.reset();
+
+    }
+
     render() {
         return (
-            <form className="cotizar-auto">
+            <form className="cotizar-auto" onSubmit={this.quoteInsurance}>
                 <div className="campo">
-                    <label>Marca</label>
-                    <select name="marca" >
-                        <option value="americano">Americano</option>
-                        <option value="europeo">Europeo</option>
-                        <option value="asiatico">Asiatico</option>
+                    <label>Brand:</label>
+                    <select name="brand" ref={this.brandRef}>
+                        <option value="american">American</option>
+                        <option value="european">European</option>
+                        <option value="asian">Asian</option>
                     </select>
                 </div>
 
                 <div className="campo">
-                    <label>Año</label>
-                    <select name="year">
+                    <label>Year:</label>
+                    <select name="year" ref={this.yearRef}>
                         <option value="2018">2018</option>
                         <option value="2017">2017</option>
                         <option value="2016">2016</option>
@@ -32,11 +62,11 @@ class Form extends React.Component{
                 </div>
                 <div className="campo">
                     <label>Plan:</label>
-                    <input type="radio" name="plan" value="basico"/> Básico
-                    <input type="radio" name="plan" value="completo"/> Completo
+                    <input type="radio" name="plan" value="basic" ref={this.basicPlanRef}/> Basic
+                    <input type="radio" name="plan" value="full" ref={this.fullPlanRef}/> Full
                 </div>
 
-                <button type="submit" className="boton">Cotizar</button>
+                <button type="submit" className="boton">Quote</button>
             </form>
         );
     }

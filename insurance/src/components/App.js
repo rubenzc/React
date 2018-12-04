@@ -3,6 +3,12 @@ import Header from './Header';
 import Form from './Form';
 
 class App extends Component {
+
+  quoteInsurance = (data) =>{
+    //Read the refs from the form
+    console.log(data);
+  }
+
   render() {
     return (
       <div className="contenedor">
@@ -10,7 +16,9 @@ class App extends Component {
           titulo = 'Car insurance quote'
         />
         <div className="contenedor-formulario">
-          <Form />
+          <Form
+            quoteInsurance = {this.quoteInsurance}
+          />
         </div>
       </div>
     );
