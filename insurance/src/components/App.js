@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Header from './Header';
 import Form from './Form';
+import Resume from'./Resume';
 import {getYearDifference, checkBrand, getPlan} from '../helper';
 
 class App extends Component {
@@ -8,7 +9,7 @@ class App extends Component {
   //State
   state = {
     result: '',
-    data: {}
+    dataCar: {}
   }
 
   quoteInsurance = (data) =>{
@@ -39,7 +40,7 @@ class App extends Component {
 
     this.setState({
       result: result,
-      data: dataCar
+      dataCar: dataCar
     })
 
   }
@@ -53,6 +54,10 @@ class App extends Component {
         <div className="contenedor-formulario">
           <Form
             quoteInsurance = {this.quoteInsurance}
+          />
+          <Resume
+            dataCar = {this.state.dataCar}
+            result = {this.state.result}
           />
         </div>
       </div>
