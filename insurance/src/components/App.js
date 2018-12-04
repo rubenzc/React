@@ -5,6 +5,12 @@ import {getYearDifference, checkBrand, getPlan} from '../helper';
 
 class App extends Component {
 
+  //State
+  state = {
+    result: '',
+    data: {}
+  }
+
   quoteInsurance = (data) =>{
     //Read the refs from the form
     const {brand, year, plan} = data;
@@ -23,6 +29,18 @@ class App extends Component {
 
     //Basic plan increase the value 20% and full plan 50%
     result = parseFloat (getPlan(plan) * result).toFixed(2);
+    
+    //Create object for state
+    const dataCar = {
+      brand: brand,
+      year: year,
+      plan: plan
+    }
+
+    this.setState({
+      result: result,
+      data: dataCar
+    })
 
   }
 
