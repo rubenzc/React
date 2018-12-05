@@ -1,5 +1,5 @@
-import React, {Component} from 'react';
-import Result from'./Result';
+import React from 'react';
+import {primeraMayuscula} from '../helper';
 
 class Resume extends React.Component {
     
@@ -11,9 +11,9 @@ class Resume extends React.Component {
         return (
             <div className="resumen">
                 <h2>Quote resume</h2>
-                <li>Brand: {brand}</li>
-                <li>Year: {year}</li>
-                <li>Plan: {plan}</li>
+                <li>Brand: { primeraMayuscula (brand) }</li>
+                <li>Year: { primeraMayuscula (year) }</li>
+                <li>Plan: { primeraMayuscula (plan) }</li>
             </div>
         )
         
@@ -24,9 +24,6 @@ class Resume extends React.Component {
         return(
             <div>
                 { this.showResume() }
-                <Result
-                    result = {this.props.result}
-                />
             </div>
         )
     }

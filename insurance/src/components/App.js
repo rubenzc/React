@@ -58,6 +58,8 @@ class App extends Component {
           />
           <Resume
             dataCar = {this.state.dataCar}
+          />
+          <Result
             result = {this.state.result}
           />
         </div>
