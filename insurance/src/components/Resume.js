@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import Result from'./Result';
 
 class Resume extends React.Component {
     
@@ -20,10 +21,12 @@ class Resume extends React.Component {
     
     render(){
 
-
         return(
             <div>
                 { this.showResume() }
+                <Result
+                    result = {this.props.result}
+                />
             </div>
         )
     }

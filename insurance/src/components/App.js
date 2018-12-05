@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Header from './Header';
 import Form from './Form';
 import Resume from'./Resume';
+import Result from'./Result';
 import {getYearDifference, checkBrand, getPlan} from '../helper';
 
 class App extends Component {
