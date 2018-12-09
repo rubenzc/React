@@ -40,15 +40,39 @@ class App extends Component {
   addExpense = expense => {
     //Take a copy from actual state
     const expenses = {...this.state.expenses};
-    console.log(expenses);
     //Add to expense the actual state
     expenses[`expense${Date.now()}`] = expense;
-    console.log(expenses);
+
+    //Subtract to badge
+    this.subtractBadge(expense.quantityExpense);
+
     //Update the state
     this.setState({
       expenses
     })
   }
+
+  //Subtract form the badge when we create a new expense
+
+  subtractBadge = quantity => {
+    //Read the expense
+    let subtract = Number(quantity);
+
+    //Take a copy from actual state
+    let difference = this.state.difference;
+
+    //We subtract it
+    difference -= subtract;
+
+    //Add the new state
+
+    this.setState({
+      difference
+    })
+
+
+  }
+
 
   render() {
     return (
