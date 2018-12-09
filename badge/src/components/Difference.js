@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import {revisarPresupuesto} from '../helper';
+import PropTypes from 'prop-types';
 
 class Difference extends Component {
     
@@ -16,4 +17,9 @@ class Difference extends Component {
     }
 }
 
+
+Difference.propTypes = {
+    badge: PropTypes.string.isRequired,
+    difference: PropTypes.string.isRequired
+}
 export default Difference;

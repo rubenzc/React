@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import Badge from './Badge';
 import Difference from './Difference';
+import PropTypes from 'prop-types';
 
 class BadgeControl extends Component {
 
@@ -17,6 +18,11 @@ class BadgeControl extends Component {
             </React.Fragment>
         );
     }
+}
+
+BadgeControl.propTypes = {
+    badge: PropTypes.string.isRequired,
+    difference: PropTypes.string.isRequired
 }
 
 export default BadgeControl;

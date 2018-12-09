@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 class FormExpenses extends React.Component {
 
@@ -39,6 +40,10 @@ class FormExpenses extends React.Component {
         )
     }
 
+}
+
+FormExpenses.propTypes = {
+    addExpense: PropTypes.func.isRequired
 }
 
 export default FormExpenses;

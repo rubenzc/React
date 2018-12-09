@@ -64,6 +64,7 @@ class App extends Component {
     //We subtract it
     difference -= subtract;
 
+    difference = String(difference);
     //Add the new state
 
     this.setState({
