@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Header from './Header';
 import Form from './Form';
 import List from './List';
+import {validarPresupuesto} from '../helper';
 import '../css/App.css'
 
 class App extends Component {
@@ -11,6 +12,28 @@ class App extends Component {
     difference: '',
     expenses: {}
   }
+
+  componentDidMount(){
+    this.getBadge();
+  }
+
+
+  getBadge = () =>{
+    let badge = prompt('What is your badge??');
+    
+    let result = validarPresupuesto(badge);
+
+    if (result){
+      this.setState({
+        badge: badge,
+        difference : badge
+      })
+    } else {
+      this.getBadge();
+    }
+  } 
+
+
 
   //Add new expense to the state
   addExpense = expense => {
