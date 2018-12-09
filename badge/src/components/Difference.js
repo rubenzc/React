@@ -4,8 +4,8 @@ class Difference extends Component {
     
     render() {
         return (
-            <div className="class-name">
-                <p>Rest</p>
+            <div className="alert alert-success">
+                Difference: $ {this.props.difference}
             </div>
         );
     }

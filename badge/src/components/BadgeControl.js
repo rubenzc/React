@@ -7,8 +7,12 @@ class BadgeControl extends Component {
     render() {
         return (
             <React.Fragment>
-                <Badge/>
-                <Difference/>
+                <Badge
+                    badge = {this.props.badge}
+                />
+                <Difference
+                    difference = {this.props.difference}
+                />
             </React.Fragment>
         );
     }

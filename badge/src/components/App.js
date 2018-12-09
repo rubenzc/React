@@ -67,7 +67,10 @@ class App extends Component {
               <List
               expenses = {this.state.expenses}
               />
-              <BadgeControl/>
+              <BadgeControl
+                badge = {this.state.badge}
+                difference = {this.state.difference}
+              />
             </div>
           </div>
 

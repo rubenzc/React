@@ -4,8 +4,8 @@ class Badge extends Component {
     
     render() {
         return (
-            <div className="class-name">
-                <p>Prep</p>
+            <div className="alert alert-primary">
+                Badge: $ {this.props.badge}
             </div>
         );
     }
