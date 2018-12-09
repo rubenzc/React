@@ -30,7 +30,7 @@ class App extends Component {
     return (
       <div className="App container">
         <Header
-          titulo = 'Weekly badge'
+          title = 'Weekly badge'
         />
         <div className="contenido-principal contenido">
           <div className="row">
@@ -41,7 +41,7 @@ class App extends Component {
             </div>
             <div className="one-half column">
               <List
-              gastos = {this.state.expenses}
+              expenses = {this.state.expenses}
               />
             </div>
           </div>
