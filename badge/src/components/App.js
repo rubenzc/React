@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Header from './Header';
 import Form from './Form';
 import List from './List';
+import BadgeControl from './BadgeControl';
 import {validarPresupuesto} from '../helper';
 import '../css/App.css'
 
@@ -66,6 +67,7 @@ class App extends Component {
               <List
               expenses = {this.state.expenses}
               />
+              <BadgeControl/>
             </div>
           </div>
 
