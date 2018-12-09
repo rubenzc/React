@@ -11,6 +11,7 @@ class BadgeControl extends Component {
                     badge = {this.props.badge}
                 />
                 <Difference
+                    badge = {this.props.badge}
                     difference = {this.props.difference}
                 />
             </React.Fragment>
