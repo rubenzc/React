@@ -5,8 +5,19 @@ import Date from './components/Date';
 
 class App extends Component {
 
+  state = {
+    dates: []
+  }
+
   createDate = (newDate) => {
-    console.log(newDate);
+    //Copy of dates array from state
+    const dates = [...this.state.dates, newDate]
+
+    console.log(dates);
+
+    this.setState({
+      dates: dates
+    })
   } 
 
   render() {

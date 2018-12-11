@@ -23,8 +23,11 @@ class Date extends Component {
             symptoms : this.symptomsRef.current.value
 
         }
-        
+        //Send the object to parent to update the state
         this.props.createDate(newDate);
+
+        //Reset
+        e.currentTarget.reset();
         
     }
 
