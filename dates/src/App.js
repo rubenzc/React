@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './index.css';
 import Header from './components/Header';
-import Date from './components/Date';
+import Date from './components/AddDate';
 import DatesList from './components/DatesList';
 
 class App extends Component {

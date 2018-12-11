@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Date from './Date';
 
 class DatesList extends Component {
     
@@ -12,6 +13,10 @@ class DatesList extends Component {
             <div className="card mt">
                 <div className="card-body">
                     <h2 className="card-title text-center">{message}</h2>
+
+                    <div className="lista-citas">
+                        <Date />
+                    </div>
                 </div>
             </div>
         );
