@@ -2,12 +2,19 @@ import React, { Component } from 'react';
 
 class Date extends Component {
     state = {  }
+
+    createNewDate = e => {
+        e.preventDefault();
+        this.props.createDate();
+        console.log('click');
+    }
+
     render() { 
         return ( 
             <div className="card mt-5">
                 <div className="card-body">
                     <h2 className="card-title text-center mb-5">Add your dates here</h2>
-                    <form >
+                    <form onSubmit={this.createNewDate}>
                     <div className="form-group row">
                         <label className="col-sm-4 col-lg-2 col-form-label">Pet name</label>
                         <div className="col-sm-8 col-lg-10">

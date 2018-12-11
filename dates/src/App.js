@@ -4,6 +4,11 @@ import Header from './components/Header';
 import Date from './components/Date';
 
 class App extends Component {
+
+  createDate = e => {
+    console.log('test2');
+  } 
+
   render() {
     return (
       <div className="container">
@@ -12,7 +17,9 @@ class App extends Component {
         />
         <div className="row">
           <div className="col-md-6">
-            <Date/>
+            <Date
+              const createDate = {this.createDate}
+            />
           </div>
         </div>
       </div>
