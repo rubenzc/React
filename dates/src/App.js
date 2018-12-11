@@ -5,8 +5,8 @@ import Date from './components/Date';
 
 class App extends Component {
 
-  createDate = e => {
-    console.log('test2');
+  createDate = (newDate) => {
+    console.log(newDate);
   } 
 
   render() {

@@ -1,12 +1,31 @@
 import React, { Component } from 'react';
+import uuid from 'uuid';
 
 class Date extends Component {
+
+    petNameRef = React.createRef();
+    animalOwnerRef = React.createRef();
+    dateRef = React.createRef();
+    timeRef = React.createRef();
+    symptomsRef = React.createRef();
+
     state = {  }
 
     createNewDate = e => {
         e.preventDefault();
-        this.props.createDate();
-        console.log('click');
+
+        const newDate = {
+            id : uuid(),
+            petName : this.petNameRef.current.value,
+            animalOwner : this.animalOwnerRef.current.value,
+            date : this.dateRef.current.value,
+            time : this.timeRef.current.value,
+            symptoms : this.symptomsRef.current.value
+
+        }
+        
+        this.props.createDate(newDate);
+        
     }
 
     render() { 
@@ -18,32 +37,32 @@ class Date extends Component {
                     <div className="form-group row">
                         <label className="col-sm-4 col-lg-2 col-form-label">Pet name</label>
                         <div className="col-sm-8 col-lg-10">
-                            <input type="text" className="form-control" placeholder="Pet name" />
+                            <input ref={this.petNameRef} type="text" className="form-control" placeholder="Pet name" />
                         </div>
                     </div>
                     <div className="form-group row">
                         <label className="col-sm-4 col-lg-2 col-form-label">Animal owner</label>
                         <div className="col-sm-8 col-lg-10">
-                            <input type="text" className="form-control"  placeholder="Animal owner" />
+                            <input ref={this.animalOwnerRef} type="text" className="form-control"  placeholder="Animal owner" />
                         </div>
                     </div>
 
                     <div className="form-group row">
                         <label className="col-sm-4 col-lg-2 col-form-label">Date</label>
                         <div className="col-sm-8 col-lg-4  mb-4 mb-lg-0">
-                            <input type="date" className="form-control" />
+                            <input ref={this.dateRef} type="date" className="form-control" />
                         </div>                            
 
                         <label className="col-sm-4 col-lg-2 col-form-label">Time</label>
                         <div className="col-sm-8 col-lg-4">
-                            <input type="time" className="form-control" />
+                            <input ref={this.timeRef} type="time" className="form-control" />
                         </div>
                     </div>
 
                     <div className="form-group row">
                         <label className="col-sm-4 col-lg-2 col-form-label">Symptoms</label>
                         <div className="col-sm-8 col-lg-10">
-                            <textarea  className="form-control"></textarea>
+                            <textarea ref={this.symptomsRef} className="form-control"></textarea>
                         </div>
                     </div>
                     <div className="form-group row justify-content-end">
