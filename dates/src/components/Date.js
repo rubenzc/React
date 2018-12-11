@@ -9,29 +9,49 @@ class Date extends Component {
     timeRef = React.createRef();
     symptomsRef = React.createRef();
 
-    state = {  }
+    state = { 
+        error: false
+     }
 
     createNewDate = e => {
         e.preventDefault();
 
-        const newDate = {
-            id : uuid(),
-            petName : this.petNameRef.current.value,
-            animalOwner : this.animalOwnerRef.current.value,
-            date : this.dateRef.current.value,
-            time : this.timeRef.current.value,
-            symptoms : this.symptomsRef.current.value
+        const petName = this.petNameRef.current.value,
+            animalOwner = this.animalOwnerRef.current.value,
+            date = this.dateRef.current.value,
+            time = this.timeRef.current.value,
+            symptoms = this.symptomsRef.current.value
 
+        if (petName === '' || animalOwner === '' || date === '' || time === '' || symptoms === ''){
+            this.setState({
+                error: true
+            })
+        } else {
+            const newDate = {
+                id : uuid(),
+                petName : petName,
+                animalOwner : animalOwner,
+                date : date,
+                time : time,
+                symptoms : symptoms
+    
+            }
+            //Send the object to parent to update the state
+            this.props.createDate(newDate);
+
+            //Reset
+            e.currentTarget.reset();
+
+            this.setState({
+                error: false
+            })
         }
-        //Send the object to parent to update the state
-        this.props.createDate(newDate);
-
-        //Reset
-        e.currentTarget.reset();
+ 
         
     }
 
     render() { 
+        const existError = this.state.error;
         return ( 
             <div className="card mt-5">
                 <div className="card-body">
@@ -74,6 +94,7 @@ class Date extends Component {
                         </div>
                     </div>
                 </form>
+                { existError ? <div className="alert alert-danger text-center">Todos los campos son obligatorios</div> : ''}
                 </div>
             </div>
          );
