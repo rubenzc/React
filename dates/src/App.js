@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './index.css';
 import Header from './components/Header';
 import Date from './components/Date';
+import DatesList from './components/DatesList';
 
 class App extends Component {
 
@@ -30,6 +31,11 @@ class App extends Component {
           <div className="col-md-6">
             <Date
               const createDate = {this.createDate}
+            />
+          </div>
+          <div className="col-md-6">
+            <DatesList
+              dates={this.state.dates}
             />
           </div>
         </div>
