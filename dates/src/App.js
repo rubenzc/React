@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './index.css';
 import Header from './components/Header';
+import Date from './components/Date';
 
 class App extends Component {
   render() {
@@ -9,6 +10,11 @@ class App extends Component {
         <Header
           title = {'Veterinary patient administrator'}
         />
+        <div className="row">
+          <div className="col-md-6">
+            <Date/>
+          </div>
+        </div>
       </div>
     );
   }
