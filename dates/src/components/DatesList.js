@@ -15,7 +15,13 @@ class DatesList extends Component {
                     <h2 className="card-title text-center">{message}</h2>
 
                     <div className="lista-citas">
-                        <Date />
+                        {Object.keys(this.props.dates).map(date => (
+                            <Date
+                                key = {date}
+                                info = {this.props.dates[date]}
+                            />
+                            
+                        ))}
                     </div>
                 </div>
             </div>
