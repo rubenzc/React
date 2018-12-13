@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import uuid from 'uuid';
+import PropTypes from 'prop-types';
 
 class AddDate extends Component {
 
@@ -99,6 +100,10 @@ class AddDate extends Component {
             </div>
          );
     }
+}
+
+AddDate.propTypes = {
+    createDate : PropTypes.func.isRequired
 }
  
 export default AddDate;
