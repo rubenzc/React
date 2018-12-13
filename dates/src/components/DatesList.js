@@ -10,7 +10,7 @@ class DatesList extends Component {
         const message = Object.keys(dates).length === 0 ? 'No dates' : 'Manage your dates here';
 
         return (
-            <div className="card mt">
+            <div className="card mt-5">
                 <div className="card-body">
                     <h2 className="card-title text-center">{message}</h2>
 

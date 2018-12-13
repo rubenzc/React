@@ -10,6 +10,28 @@ class App extends Component {
     dates: []
   }
 
+  //It would a be a "document.ready"
+  //Show the data at local storage
+  componentDidMount(){
+    const datesLS = localStorage.getItem('dates');
+    if(datesLS){
+      this.setState({
+        dates: JSON.parse(datesLS)
+      })
+    }
+  }
+
+  //Update the local storage when change something
+  componentDidUpdate() {
+    localStorage.setItem(
+      'dates',
+      //Convert array to string
+      JSON.stringify(this.state.dates)
+    )
+  }
+
+
+
   createDate = (newDate) => {
     //Copy of dates array from state
     const dates = [...this.state.dates, newDate]
