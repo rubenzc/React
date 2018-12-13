@@ -19,6 +19,7 @@ class DatesList extends Component {
                             <Date
                                 key = {date}
                                 info = {this.props.dates[date]}
+                                deleteDate={this.props.deleteDate}
                             />
                             
                         ))}

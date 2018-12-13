@@ -19,8 +19,26 @@ class App extends Component {
     this.setState({
       dates: dates
     })
-  } 
+  }
 
+  deleteDate = id => {
+    console.log(id);
+    //Read the state
+    const actualDates = [...this.state.dates];
+
+    console.log(actualDates);
+    //Delete the element from the state
+    const dates = actualDates.filter(date => date.id !== id);
+
+    console.log('test');
+    console.log(dates);
+    //Update the state
+
+    this.setState({
+      dates: dates
+    })
+
+  }
   render() {
     return (
       <div className="container">
@@ -36,6 +54,7 @@ class App extends Component {
           <div className="col-md-6">
             <DatesList
               dates={this.state.dates}
+              deleteDate={this.deleteDate}
             />
           </div>
         </div>
