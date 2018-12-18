@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Header from './components/Header';
 import Form from './components/Form';
 import Error from './components/Error';
+import Weather from './components/Weather';
 
 class App extends Component {
 
@@ -11,8 +12,10 @@ class App extends Component {
     result: {}
   }
 
-  componentDidUpdate() {
+  componentDidUpdate(prevProps, prevState) {
+    if(prevState.request != this.state.request) {
     this.checkApi();
+    }
   }
 
   componentDidMount(){
@@ -27,7 +30,7 @@ class App extends Component {
     if(!city || !country) return null;
 
     //Read url & add api key
-    const appId = '811c5da067093e5f7224e7f097c52ae9';
+    const appId = '279fc114b5423b73a51f6eee4069e4bb';
     let url = `https://api.openweathermap.org/data/2.5/weather?q=${city},${country}&appid=${appId}`;
 
 
@@ -54,7 +57,8 @@ class App extends Component {
       })
     } else {
       this.setState({
-        request: answer
+        request: answer,
+        error: false
       })
     }
       
@@ -68,7 +72,9 @@ class App extends Component {
 
     if(error){
       result = <Error message="The fields can't be empty"/>
-    } 
+    } else {
+      result = <Weather result = {this.state.resultado} />
+    }
 
     return (
       <div className="app">
