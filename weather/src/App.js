@@ -13,7 +13,7 @@ class App extends Component {
   }
 
   componentDidUpdate(prevProps, prevState) {
-    if(prevState.request != this.state.request) {
+    if(prevState.request !== this.state.request) {
     this.checkApi();
     }
   }
@@ -73,7 +73,7 @@ class App extends Component {
     if(error){
       result = <Error message="The fields can't be empty"/>
     } else {
-      result = <Weather result = {this.state.resultado} />
+      result = <Weather result = {this.state.result} />
     }
 
     return (
