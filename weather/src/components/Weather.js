@@ -11,7 +11,7 @@ class Weather extends Component {
         if(!name || !weather || !main) return null;
 
         const kelvin = 273.15;
-        const urlIcon = `http://openweathermap.org/img/w/${weather[0].icon}.png`;
+        const urlIcon = `https://openweathermap.org/img/w/${weather[0].icon}.png`;
         const alt = `${name} Weather`;
         return(
             <div className="row">
