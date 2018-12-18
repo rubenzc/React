@@ -66,13 +66,18 @@ class App extends Component {
 
   render() {
 
-    const error = this.state.error;
+    const error = this.state.error,
+          {cod} = this.state.result;
 
     let result;
 
     if(error){
       result = <Error message="The fields can't be empty"/>
-    } else {
+    } else if (cod === "404") {
+      result = <Error message="City not found"/>
+    }
+    
+    else {
       result = <Weather result = {this.state.result} />
     }
 
