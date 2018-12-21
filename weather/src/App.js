@@ -30,7 +30,7 @@ class App extends Component {
     if(!city || !country) return null;
 
     //Read url & add api key
-    const appId = '279fc114b5423b73a51f6eee4069e4bb';
+    const appId = '5691cb67d4449d4a2bebe46f2d82c7e4';
     let url = `https://api.openweathermap.org/data/2.5/weather?q=${city},${country}&appid=${appId}`;
 
 
