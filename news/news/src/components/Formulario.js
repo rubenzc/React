@@ -28,6 +28,7 @@ class Formulario extends Component {
                                 <option value="science">Science</option>
                                 <option value="sports">General</option>
                                 <option value="technology">Technology</option>
+                                <option value="sports">Sports</option>
                             </select>
                         </div>
                         <div className="input-field col s12 m4 enviar">
