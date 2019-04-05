@@ -1,26 +1,15 @@
+// Import resources
 import React from "react";
 import ReactDOM from "react-dom";
-import App from "./components/app";
-
+import App from "./app";
+// Import bootstrap css
+import 'bootstrap/dist/css/bootstrap.min.css';
+// Render main app
 ReactDOM.render(<App />, document.getElementById("app"));
 
 const Index = () => {
   return (
-    <div className="full-screen">
-      <div>
-        <h1>
-          React Page {" "}
-        </h1>
-        <br />
-        <a
-          className="button-line"
-          href="https://github.com/deityhub"
-          target="_blank"
-        >
-          Know more
-        </a>
-      </div>
-    </div>
+    <h1>Welcome!</h1>
   );
 };
 
