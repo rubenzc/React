@@ -3,7 +3,7 @@ import {calculateTotal} from '../helpers';
 
 const Form = (props) => {
 
-    const {quantity, saveQuantity, term, saveTerm, total, saveTotal, saveLoading} = props;
+    const {quantity, saveQuantity, term, saveTerm, saveTotal, saveLoading} = props;
 
     //Define state
     const [error, saveError] = useState(false);
