@@ -1,7 +1,9 @@
 import React, { useState, Fragment } from 'react';
 import {calculateTotal} from '../helpers';
 
-const Form = ({quantity, saveQuantity, term, saveTerm}) => {
+const Form = (props) => {
+
+    const {quantity, saveQuantity, term, saveTerm, total, saveTotal, saveLoading} = props;
 
     //Define state
     const [error, saveError] = useState(false);
@@ -19,10 +21,19 @@ const Form = ({quantity, saveQuantity, term, saveTerm}) => {
         //Delete previous error
         saveError(false);
 
-        //Quote
-        const total = calculateTotal(quantity, term);
+        //Enable spinner
+        saveLoading(true);
 
-        console.log(total);
+        setTimeout(() => {
+            //Quote
+            const total = calculateTotal(quantity, term);
+            //When quote calculated, save the total
+            saveTotal(total);
+
+            //Unable spinner
+            saveLoading(false);
+        }, 2000);
+
     }
 
     return ( 
